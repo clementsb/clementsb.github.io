@@ -48,7 +48,7 @@ export default function App() {
                 <main>
                     {/* Header */}
                     <header style={{ paddingBottom: '2.5rem', borderBottom: '1px solid #e2e8f0' }}>
-                        <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 56, fontWeight: 400, lineHeight: 1.05, letterSpacing: -1, marginBottom: 8 }}>
+                        <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 56, fontWeight: 400, lineHeight: 1.05, letterSpacing: -1, marginBottom: 8, color: '#0f172a' }}>
                             Brandon <em style={{ fontStyle: 'italic', color: '#2563eb' }}>Clements</em>
                         </h1>
                         <p style={{ fontFamily: "'DM Mono', monospace", fontSize: 14, color: '#64748b', letterSpacing: '0.04em' }}>Software Engineer</p>

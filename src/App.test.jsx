@@ -21,19 +21,19 @@ describe('App component', () => {
   it('toggles skills when clicked', () => {
     render(<App />);
     
-    // "JavaScript" is NOT in the initial selectedSkills state ['Java', 'HTML', 'Python', 'Agile', '.NET Framework']
+    // All skills are selected by default
     const jsButton = screen.getByRole('button', { name: /JavaScript/i });
     
-    // Initial state: not selected (white background/gray border as per CSS in App.jsx)
-    expect(jsButton).toHaveStyle('background: rgb(255, 255, 255)');
-    
-    // Click to select
-    fireEvent.click(jsButton);
+    // Initial state: selected (light blue background as per CSS in App.jsx)
     expect(jsButton).toHaveStyle('background: rgb(239, 246, 255)'); // #eff6ff
     
-    // Click again to deselect
+    // Click to deselect
     fireEvent.click(jsButton);
     expect(jsButton).toHaveStyle('background: rgb(255, 255, 255)');
+    
+    // Click again to select
+    fireEvent.click(jsButton);
+    expect(jsButton).toHaveStyle('background: rgb(239, 246, 255)');
   });
 
   it('contains correct social links with security attributes', () => {

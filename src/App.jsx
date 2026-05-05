@@ -2,7 +2,8 @@ import { useState } from 'react'
 import './App.css'
 
 export default function App() {
-    const [selectedSkills, setSelectedSkills] = useState(['Java', 'HTML', 'Python', 'Agile', '.NET Framework'])
+    const skills = ['Java', 'HTML', 'JavaScript', 'Python', 'C#', 'React', '.NET Framework', 'SQL', 'Git', 'Agile', 'Go', 'Java Swing', 'Docker', 'CSS']
+    const [selectedSkills, setSelectedSkills] = useState(skills)
 
     const toggleSkill = (skill) => {
         setSelectedSkills(prev => 
@@ -11,8 +12,6 @@ export default function App() {
                 : [...prev, skill]
         )
     }
-
-    const skills = ['Java', 'HTML', 'JavaScript', 'Python', 'C#', 'React', '.NET Framework', 'SQL', 'Git', 'Agile', 'Go', 'Java Swing', 'Docker', 'CSS']
 
     return (
         <div style={{

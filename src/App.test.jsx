@@ -1,10 +1,26 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
+import { HashRouter } from 'react-router-dom';
 import App from './App';
+
+// Mock PDF components
+vi.mock('@react-pdf/renderer', () => ({
+    PDFViewer: ({ children }) => <div data-testid="pdf-viewer">{children}</div>,
+    Document: ({ children }) => <div data-testid="pdf-document">{children}</div>,
+    Page: ({ children }) => <div data-testid="pdf-page">{children}</div>,
+    Text: ({ children }) => <span data-testid="pdf-text">{children}</span>,
+    View: ({ children }) => <div data-testid="pdf-view">{children}</div>,
+    StyleSheet: { create: (s) => s },
+    Font: { register: vi.fn() }
+}));
+
+const renderWithRouter = (ui) => {
+  return render(ui, { wrapper: HashRouter });
+};
 
 describe('App component', () => {
   it('renders the main name Brandon Clements', () => {
-    render(<App />);
+    renderWithRouter(<App />);
     const nameElement = screen.getByText(/Brandon/i);
     const lastNameElement = screen.getByText(/Clements/i);
     expect(nameElement).toBeInTheDocument();
@@ -12,14 +28,14 @@ describe('App component', () => {
   });
 
   it('renders the experience heading', () => {
-    render(<App />);
+    renderWithRouter(<App />);
     // There are multiple instances of "experience" in the text, so we target the heading specifically
     const experienceHeading = screen.getByText('Experience');
     expect(experienceHeading).toBeInTheDocument();
   });
 
   it('toggles skills when clicked', () => {
-    render(<App />);
+    renderWithRouter(<App />);
     
     // All skills are selected by default
     const jsButton = screen.getByRole('button', { name: /JavaScript/i });
@@ -37,7 +53,7 @@ describe('App component', () => {
   });
 
   it('contains correct social links with security attributes', () => {
-    render(<App />);
+    renderWithRouter(<App />);
     
     const linkedInLink = screen.getByRole('link', { name: /LinkedIn/i });
     expect(linkedInLink).toHaveAttribute('href', 'https://www.linkedin.com/in/brandon-clements-519785211/');
@@ -51,7 +67,7 @@ describe('App component', () => {
   });
 
   it('renders all experience entries', () => {
-    render(<App />);
+    renderWithRouter(<App />);
     
     expect(screen.getByText('Integrated Solutions For Systems')).toBeInTheDocument();
     expect(screen.getByText('ThreadKore')).toBeInTheDocument();
@@ -70,9 +86,15 @@ describe('App component', () => {
   });
 
   it('renders education details correctly', () => {
-    render(<App />);
+    renderWithRouter(<App />);
     
     expect(screen.getByText('B.S. Software Engineering')).toBeInTheDocument();
     expect(screen.getByText('Class of 2023')).toBeInTheDocument();
+  });
+
+  it('contains a link to the PDF resume', () => {
+    renderWithRouter(<App />);
+    const pdfLink = screen.getByRole('link', { name: /PDF Format/i });
+    expect(pdfLink).toHaveAttribute('href', '#/resume');
   });
 });

@@ -1,15 +1,26 @@
 export const resumeData = {
     name: "Brandon Clements",
     role: "Software Engineer",
-    about: "Engineer with 4 years of experience building full-stack systems and developing user interfaces. I care deeply about creating clean abstractions and projects that are well documented and easily maintainable. Currently interested in working with people and creating a smooth and secure user experience.",
+    about: "Engineer with 4+ years of experience building full-stack systems and developing user interfaces. I care deeply about creating clean abstractions and projects that are well documented and easily maintainable. Currently interested in working with people and creating a smooth and secure user experience.",
     contact: [
         { label: 'LinkedIn', value: 'LinkedIn', url: 'https://www.linkedin.com/in/brandon-clements-519785211/' },
         { label: 'GitHub', value: 'GitHub', url: 'https://github.com/clementsb', displayValue: 'github.com/clementsb' },
         { label: 'Resume', value: 'PDF Format', url: '/resume', internal: true },
         { label: 'Location', value: 'Auburn, AL' }
     ],
-    skills: ['Java', 'HTML', 'JavaScript', 'Python', 'C#', 'React', '.NET Framework', 'SQL', 'Git', 'Agile', 'Project Management', 'Java Swing', 'Docker', 'CSS', 'Scrum', 'Jira'],
+    skills: ['Java', 'HTML', 'JavaScript', 'Python', 'C#', 'React', '.NET', 'SQL', 'Git', 'Agile', 'Project Management', 'Java Swing', 'Docker', 'CSS', 'Scrum', 'Jira'],
     experience: [
+        {
+            role: 'Full Stack Developer',
+            company: 'DirectViz Solutions',
+            date: '2026 — Present',
+            pdfDate: '08/2026 — Present',
+            location: 'Huntsville, AL',
+            bullets: [
+                'Building robust, data-centric .NET web applications for federal clients.',
+                'Working directly with technical and non-technical clients to guide long-term program direction.',
+            ]
+        },
         {
             role: 'Software Engineer',
             company: 'Integrated Solutions For Systems',

@@ -160,17 +160,14 @@ const ResumeDocument = () => (
                 ))}
             </View>
 
-            <View style={{ flexDirection: 'row', marginTop: 20 }}>
-                <View style={{ flex: 1 }}>
-                    <Text style={styles.sectionLabel}>Information</Text>
-                    {resumeData.contact.filter(c => !c.internal).map(item => (
-                        <View key={item.label} style={styles.contactItem}>
-                            <Text style={styles.contactLabel}>{item.label}</Text>
-                            <Text style={styles.contactValue}>{item.displayValue || item.url || item.value}</Text>
-                        </View>
-                    ))}
+            <View style={{ flexDirection: 'row', marginTop: 20, gap: 20 }}>
+                <View style={{ width: '33.33%' }}>
+                    <Text style={styles.sectionLabel}>Education</Text>
+                    <Text style={styles.role}>{resumeData.education.degree}</Text>
+                    <Text style={styles.contactValue}>{resumeData.education.school}</Text>
+                    <Text style={styles.date}>{resumeData.education.date}</Text>
                 </View>
-                <View style={{ flex: 1 }}>
+                <View style={{ width: '66.66%' }}>
                     <Text style={styles.sectionLabel}>Skills</Text>
                     <View style={styles.skillsContainer}>
                         {resumeData.skills.map(skill => (
@@ -178,13 +175,6 @@ const ResumeDocument = () => (
                         ))}
                     </View>
                 </View>
-            </View>
-
-            <View style={{ marginTop: 20 }}>
-                <Text style={styles.sectionLabel}>Education</Text>
-                <Text style={styles.role}>{resumeData.education.degree}</Text>
-                <Text style={styles.contactValue}>{resumeData.education.school}</Text>
-                <Text style={styles.date}>{resumeData.education.date}</Text>
             </View>
         </Page>
     </Document>

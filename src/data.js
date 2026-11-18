@@ -11,14 +11,15 @@ export const resumeData = {
     skills: ['Java', 'HTML', 'JavaScript', 'Python', 'C#', 'React', '.NET', 'SQL', 'Git', 'Agile', 'Project Management', 'Java Swing', 'Docker', 'CSS', 'Scrum', 'Jira'],
     experience: [
         {
-            role: 'Full Stack Developer',
+            role: 'Full-Stack Developer',
             company: 'DirectViz Solutions',
             date: '2026 — Present',
             pdfDate: '08/2026 — Present',
             location: 'Huntsville, AL',
             bullets: [
+                'Developing secure coding practices, code standards, CI/CD pipelines, and automated testing strategies.',
                 'Building robust, data-centric .NET web applications for federal clients.',
-                'Working directly with technical and non-technical clients to guide long-term program direction.',
+                'C#, JavaScript, HTML, SQL, .NET Development'
             ]
         },
         {
@@ -29,7 +30,8 @@ export const resumeData = {
             location: 'Auburn, AL',
             bullets: [
                 'Member of an engineering team responsible for developing and maintaining Web applications and Windows applications for Department of Defense clients.',
-                'Work directly with clients to translate requirements into features and guide long-term development direction.',
+                // 'Work directly with clients to translate requirements into features and guide long-term development direction.',
+                'Java, Java Swing, Linux, Docker'
             ]
         },
         {
@@ -40,7 +42,8 @@ export const resumeData = {
             location: 'Opelika, AL',
             bullets: [
                 'Developed new features for a large construction management and sales platform, enhancing functionality and user experience.',
-                'Maintained and updated existing software modules ensuring they remain efficient and aligned with evolving customer needs.',
+                // 'Maintained and updated existing software modules ensuring they remain efficient and aligned with evolving customer needs.',
+                'C#, JavaScript, HTML, SQL, .NET Development'
             ]
         },
         {
@@ -51,8 +54,9 @@ export const resumeData = {
             location: 'Auburn, AL',
             bullets: [
                 'Developed and launched new applications for clients within Auburn University to support various organizational needs across campus.',
-                'Maintained and improved existing applications by implementing new features and adjusting for evolving use cases.',
+                // 'Maintained and improved existing applications by implementing new features and adjusting for evolving use cases.',
                 'Provided ongoing technical support for clients, addressing any issues that came up and assisting clients to make the most of our products.',
+                'C#, JavaScript, HTML, SQL, .NET Development'
             ]
         },
     ],
